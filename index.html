@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulário de Inscrição</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+    <div class="form-container">
+        <h2>Formulário de Inscrição</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+ 
+            <div class="form-group">
+                <label for="dataNascimento">Data de Nascimento</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" required>
+            </div>
+ 
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+ 
+            <div class="form-group">
+                <label for="curso">Curso</label>
+                <select id="curso" name="curso" required>
+                    <option value="" disabled selected>Selecione um curso</option>
+                    <option value="informatica">Informática</option>
+                    <option value="matematica">Matemática</option>
+                    <option value="engenharia">Engenharia</option>
+                    <option value="faxineiro">faxineiro</option>
+                    <option value="administração">administração</option>
+                    <option value="enfermagem">enfermagem</option>
+                </select>
+            </div>
+ 
+            <div class="buttons">
+                <button type="button" class="add-btn" onclick="AddCadastroArray()">Adicionar</button>
+                <button type="button" class="delete-btn" onclick="ClearCadastro()">Excluir</button>
+                <button type="button" class="add-btn" onclick="viewName()">ExibirNomes"</button>
+                <button type="button" class="add-btn" onclick="updateCursos()">Alterarcurso</button>
+            </div>
+        </form>
+    </div>
+    <script>
+
+
+        function ClearCadastro() {
+            document.getElementById("registrationForm").reset();
+            console.log("Cadastro excluído");
+        }
+         
+        
+        let cadastros = [];
+         
+        function AddCadastroArray() {
+            let cadastro = {
+                "nome": document.getElementById("nome").value,
+                "dataNascimento": document.getElementById("dataNascimento").value,
+                "email": document.getElementById("email").value,
+                "curso": document.getElementById("curso").value
+            };
+            cadastros.push(cadastro);
+            console.log(cadastros);
+        }
+        </script>
+</body>
+</html>
